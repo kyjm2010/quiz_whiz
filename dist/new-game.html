@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Whiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/738255dfdd.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="home" class="flex-center flex-column">
+            <h1>Quiz Whiz</h1>
+            <div class="category">
+                <select name="category" id="category" onChange="changeCategory()">
+                    <option class="value" value="">- Category -</option>
+                    <option class="value" value="9">General Knowledge</option>
+                    <!-- <option class="value" value="10">Books</option> -->
+                    <option class="value" value="11">Film</option>
+                    <option class="value" value="12">Music</option>
+                    <!-- <option class="value" value="13">Musicals/Theatre</option> -->
+                    <option class="value" value="14">Television</option>
+                    <option class="value" value="15">Video Games</option>
+                    <!-- <option class="value" value="16">Board Games</option> -->
+                    <!-- <option class="value" value="17">Science & Nature</option> -->
+                    <!-- <option class="value" value="18">Computers</option> -->
+                    <!-- <option class="value" value="19">Mathematics</option> -->
+                    <!-- <option class="value" value="20">Mythology</option> -->
+                    <!-- <option class="value" value="21">Sports</option> -->
+                    <option class="value" value="22">Geography</option>
+                    <!-- <option class="value" value="23">History</option> -->
+                    <!-- <option class="value" value="24">Politics</option> -->
+                    <!-- <option class="value" value="25">Art</option> -->
+                    <!-- <option class="value" value="26">Celebrities</option> -->
+                    <option class="value" value="27">Animals</option>
+                </select>
+            </div>
+            <div class="count">
+                <select name="count" id="count" onChange="changeCount()">
+                    <option class="value" value="">- Question Count -</option>
+                    <option class="value" value="10">10</option>
+                    <option class="value" value="20">20</option>
+                    <option class="value" value="30">30</option>
+                    <option class="value" value="40">40</option>
+                    <option class="value" value="50">50</option>
+                </select>
+            </div>
+            <div class="difficulty">
+                <select name="difficulty" id="difficulty" onChange="changeDifficulty()">
+                    <option class="value" value="">- Difficulty -</option>
+                    <option class="value" value="easy">Easy</option>
+                    <option class="value" value="medium">Medium</option>
+                    <option class="value" value="hard">Hard</option>
+                </select>
+            </div>
+
+            <a id="start" class="btn" href="game.html"><p>Start Game</p></a>
+            <a id="main" class="btn" href="index.html"><p>Main Menu</p></a>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

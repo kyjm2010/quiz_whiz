@@ -1,5 +1,5 @@
 :root {
-    background: #ecf5ff;
+    background: #97adc8;
     font-size: 10px;
 }
 *{
@@ -7,12 +7,11 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
 h1{
     font-size: 5.4rem;
-    color: #56a5eb;
+    color: #ffffff;
     margin-bottom: 5rem;
 }
 
@@ -47,15 +46,27 @@ h3{
     width: 100%;
 }
 
-.difficulty{
+.difficulty, .count, .category{
     font-size: 1.8rem;
     margin-bottom: 1rem;
     width: 20rem;
-    text-align: center;
 }
 
-.difficulty label{
-    color: #56a5eb;
+.difficulty:hover, .count:hover, .category:hover{
+    transform: scale(1.01);
+}
+
+.glow{
+    animation: glow 1s linear alternate infinite;
+ 
+}
+
+*:focus{
+    outline: 3px solid #1b4f7cbb;
+}
+.value{
+    color: rgb(12, 12, 102);
+    font-size: 2rem;
 }
 
 select{
@@ -63,8 +74,12 @@ select{
     height: 5rem;
     font-size: 1.8rem;
     text-align-last: center;
-    border: 3px solid #56a5eb;
+    border: 3px solid #1b4f7cbb;
     color: #56a5eb;
+}
+
+select:active, select:focus, select:visited{
+    border: none;
 }
 .flex-column{
     display: flex;
@@ -93,24 +108,9 @@ select{
     padding: 1rem 0;
     width: 20rem;
     text-align: center;
-    border: 3px solid #56a5eb;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: #56a5eb;
-    background-color: white;
-}
-
-.btn:hover{
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 236, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-}
-
-.btn[disabled]:hover{
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
+    color: white;
 }
 
 form{
@@ -142,10 +142,15 @@ input::placeholder{
     margin: 0 auto 2rem;
 }
 
+#finalScore{
+    color: #333;
+}
+
 #highScores{
     background-color: white;
     padding: 5rem;
     border-radius: 10px;
+    color: #333;
 }
 
 .choice-container{
@@ -155,6 +160,7 @@ input::placeholder{
     font-size: 1.8rem;
     border: .1rem solid rgba(86,165,235,0.25);
     background-color: white;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .choice-container:hover{
@@ -166,13 +172,15 @@ input::placeholder{
 
 .choice-prefix{
     padding: 1.5rem 2.5rem;
-    background-color: #56a5eb;
+    background-color: #0b3152;
     color: white;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .choice-text{
     padding: 1.5rem;
     width: 100%;
+    color: #333;
 }
 
 .correct{
@@ -183,10 +191,117 @@ input::placeholder{
     background-color: #dc3505;
 }
 
+#start{
+    background: #177c17;
+    border: 3px solid #266436;
+}
+
+#start:hover, #main:hover, #scores:hover, #saveScoreBtn:hover, #again:hover{
+    transform: scale(1.01);
+    transition: .4s ease-in-out;
+}
+
+#start p:hover, #scores p:hover, #again p:hover{
+    cursor: pointer;
+    transform: translateX(-.5rem);
+    transition:.4s ease-in-out;
+}
+
+.play, .mute{
+    font-size: 5rem;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: white;
+}
+
+.play{
+    display: block;
+}
+
+.mute{
+    display: none;
+}
+
+#start p:hover::after, #scores p:hover::after{
+    font-family: "FontAwesome";
+    display: inline block;
+    content: "\f054";
+    position: absolute;
+    animation: shiftRight .4s forwards ease-in-out;
+}
+
+#main, #scores, #again, #start{
+    background: #0b3152;
+    color: white;
+    border: 3px solid rgba(33, 90, 139, 0.863);
+}
+
+
+#main p:hover{
+    cursor: pointer;
+    transform: translateX(.5rem);
+    transition: .4s ease-in-out;
+}
+
+#main p:hover::after{
+    font-family: "FontAwesome";
+    display: inline block;
+    position: absolute;
+    left: 2.2em;
+    content: "\f053";
+    animation: shiftLeft .4s forwards ease-in-out;
+}
+
+#saveScoreBtn{
+    background: #852b14;
+    border: 3px solid #681010dc;
+}
+
+#scores p:hover::after{
+    margin-left: 1rem;
+    animation: rotate .4s forwards ease-in-out;
+}
+
+#saveScoreBtn p:hover{
+    cursor: pointer;
+    transform: translateX(-.5rem);
+    transition: .4s ease-in-out;
+}
+
+#saveScoreBtn p:hover::after{
+    font-family: "FontAwesome";
+    display: inline block;
+    position: absolute;
+    content: "\f381";
+    animation: shiftRight .4s forwards ease-in-out;
+}
+
+.btn[disabled]:hover, #saveScoreBtn[disabled]:hover, #saveScoreBtn[disabled] p:hover, #saveScoreBtn[disabled] p:hover::after{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    content: ""
+}
+
+#again p:hover::after{
+    font-family: "FontAwesome";
+    display: inline block;
+    position: absolute;
+    content: "\f2f9";
+    animation: spin 1s infinite linear;
+    margin-left: .75rem;
+}
+
 #hud{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: start;
+}
+
+#game{
+    color: white;
 }
 
 .hud-prefix{
@@ -196,18 +311,19 @@ input::placeholder{
 
 .hud-main-text{
     text-align: center;
+    color: #0b3152;
 }
 
 #progressBar{
     width: 20rem;
-    height: 4rem;
-    border: 0.3rem solid #56a5eb;
+    height: 4.1rem;
+    border: 0.3rem solid #0b3152;
     margin-top: 1.5rem;
 }
 
 #progressBarFull{
     height: 3.5rem;
-    background-color: #56a5eb;
+    background-color: rgb(23, 124, 23);
     width: 0%;
 }
 
@@ -220,6 +336,7 @@ input::placeholder{
     animation: spin 2s linear infinite;
 }
 
+
 @keyframes spin{
     0% {
         transform: rotate(0deg);
@@ -228,3 +345,42 @@ input::placeholder{
         transform: rotate(360deg);
     }
 }
+
+@keyframes shiftRight{
+    0%{
+        transform: translateX(0rem)
+    }
+    100%{
+        transform: translateX(1rem);
+    }
+}
+
+@keyframes shiftLeft{
+    0%{
+        transform: translateX(0rem)
+    }
+    100%{
+        transform: translateX(-1rem);
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform-origin: center;
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes glow{
+    0%{
+        box-shadow: 0 0rem 1rem 0 ;
+    }
+    100%{
+        box-shadow: 0 0rem 3rem 0 gold;
+    }
+}
+
+
