@@ -1,5 +1,5 @@
 {
-  "name": "quiz_whiz-2",
+  "name": "quiz_whiz-4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,11 +13,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage":"https://kyjm2010.github.io/quiz_whiz",
+  "homepage": "https://github.com/kyjm2010/quiz_whiz#readme",
   "bugs": {
     "url": "https://github.com/kyjm2010/quiz_whiz/issues"
   },
-  "homepage": "https://github.com/kyjm2010/quiz_whiz#readme",
   "dependencies": {
     "gh-pages": "^3.1.0"
   }
