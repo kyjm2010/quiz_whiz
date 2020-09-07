@@ -208,10 +208,10 @@ input::placeholder{
 }
 
 .play, .mute{
-    font-size: 5rem;
+    font-size: 4rem;
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 5%;
+    right: 5%;
     color: white;
 }
 
@@ -231,26 +231,38 @@ input::placeholder{
     animation: shiftRight .4s forwards ease-in-out;
 }
 
-#main, #scores, #again, #start{
+#main, #scores, #again, #start, #end{
     background: #0b3152;
     color: white;
     border: 3px solid rgba(33, 90, 139, 0.863);
 }
 
+#question{
+    font-size: 2.2em;
+}
 
-#main p:hover{
+
+#end p:hover, #main p:hover{
     cursor: pointer;
     transform: translateX(.5rem);
     transition: .4s ease-in-out;
 }
 
-#main p:hover::after{
+#end p:hover::after, #main p:hover::after{
     font-family: "FontAwesome";
     display: inline block;
     position: absolute;
     left: 2.2em;
     content: "\f053";
     animation: shiftLeft .4s forwards ease-in-out;
+}
+
+#end{
+    width: 100%;
+}
+
+#end p:hover::after{
+    left: 35%;
 }
 
 #saveScoreBtn{
@@ -335,6 +347,28 @@ input::placeholder{
     height: 12rem;
     animation: spin 2s linear infinite;
 }
+
+@media(min-width: 576px){
+    #question{
+        font-size: 3.5em;
+    }
+}
+
+@media(min-width: 768px){
+    #question{
+        font-size: 4em;
+    }
+    
+}
+
+@media(min-width: 992px){
+    #question{
+        font-size: 5em;
+    }
+    
+}
+
+
 
 
 @keyframes spin{
