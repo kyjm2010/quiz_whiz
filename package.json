@@ -1,7 +1,6 @@
 {
   "name": "quiz_whiz-4",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist"
@@ -13,11 +12,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/kyjm2010/quiz_whiz#readme",
+  "homepage": "https://github.com/kyjm2010/quiz_whiz",
   "bugs": {
     "url": "https://github.com/kyjm2010/quiz_whiz/issues"
   },
   "dependencies": {
     "gh-pages": "^3.1.0"
-  }
+  },
+  "description": ""
 }
